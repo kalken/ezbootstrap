@@ -1,5 +1,5 @@
 # key to unlock drive
-_luks_key="$HOME/.keys/case.key"
+_luks_key="$HOME/.keys/myserver.key"
 
 # publik key for ssh authentication
 # example: cat ~/.ssh/id_ed25519.pub

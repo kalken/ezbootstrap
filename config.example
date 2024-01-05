@@ -1,0 +1,47 @@
+# key to unlock drive
+_luks_key="$HOME/.keys/case.key"
+
+# publik key for ssh authentication
+# example: cat ~/.ssh/id_ed25519.pub
+_ssh_public_key=""
+
+# You can find this in /etc/machine-id
+# If left empty machine-id will be generated during install
+_machine_id=""
+
+# host connection
+_host="192.168.0.2"
+_hostname="myhost"
+
+# connection settings
+_service="ssh"
+_user="myuser"
+
+# list available devices: lsblk -fs
+#root
+_root_label="root_backup"
+_root_dev="/dev/sdb1"
+_root_dir="/mnt/$_root_label"
+
+# boot
+_boot_label="bootfs"
+_boot_dev="/dev/mmcblk1p1"
+_boot_dir="$_root_dir/boot/firmware"
+
+#arch
+_arch="arm64"
+
+# optional packages to install 
+_packages_optional="man htop curl vim"
+
+# bootstrap
+_bootstrap_arch="arm64"
+_bootstrap_release="stable"
+_bootstrap_source="http://ftp.se.debian.org/debian"
+_bootstrap="debootstrap"
+
+# chroot
+_chroot="chroot"
+_keyboard="se"
+_locales="en_US.UTF-8"
+_timezone="Europe/Stockholm"

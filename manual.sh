@@ -37,13 +37,13 @@ echo "ps. also make sure that the boostrap command is installed on the machine."
 echo
 echo "### INSTALLATION ###"
 echo ""
-echo "# stage 0 bootstrap.sh (mount drives and boostrap)"
+echo "# bootstrap.sh (mount drives and boostrap)"
 echo "( cat bootstrap.sh $_config; echo stage_0 ) | $_service $_user@$_host sudo /bin/bash -"
 echo 
-echo "# stage 1 chroot.sh (chroot setup)"
+echo "# chroot.sh (chroot setup)"
 echo "( cat chroot.sh $_config; echo stage_0 ) | $_service $_user@$_host sudo $_chroot $_root_dir /bin/bash -"
 echo 
-echo "# stage 2 bootstrap.sh (cleanup and umount drives)"
+echo "# bootstrap.sh (cleanup and umount drives)"
 echo "( cat bootstrap.sh $_config; echo stage_1 ) | $_service $_user@$_host sudo /bin/bash -"
 
 echo 

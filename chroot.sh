@@ -40,7 +40,7 @@ echo "created $FUNCNAME"
 /etc/locale.gen () {
     restore $FUNCNAME
     for name in $_locales; do
-        sed -i "/^# $name/s/^# //" /etc/locale.gen
+        sed -i "/^# $name/s/^# //" $FUNCNAME
     done
     echo "edited $FUNCNAME"
 }

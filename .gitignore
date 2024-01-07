@@ -1,0 +1,4 @@
+# Custom
+*.swp
+.DS_Store
+config

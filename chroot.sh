@@ -282,22 +282,22 @@ echo "created $FUNCNAME"
 }
 
 /etc/ssh/sshd_config () {
-    restore $FUNCNAME
-    sed -i '/#PasswordAuthentication yes/a PasswordAuthentication no' "$FUNCNAME"
-    echo "Disabled password logins in $FUNCNAME"
+restore $FUNCNAME
+sed -i '/#PasswordAuthentication yes/a PasswordAuthentication no' "$FUNCNAME"
+echo "Disabled password logins in $FUNCNAME"
 }
 
 /home () {
-    #add user
-    useradd $_user -m -s /usr/bin/zsh
-
-    # enable ssh login with key
-    su - "$_user" -c "mkdir -m 700 .ssh; echo $_ssh_public_key > .ssh/authorized_keys"
-    echo "public key for ssh login configured"
-
-    # add zsh config
-    su - "$_user" -c "git clone https://github.com/kalken/ezsh .ezsh; ln -s .ezsh/zshrc .zshrc"
-    echo "zsh configured"
+# add user
+id $_user || useradd $_user -m -s /usr/bin/zsh
+# login and config user
+su - $_user -s /bin/bash << EOF
+test -d .ssh || mkdir -m 700 .ssh
+echo "$_ssh_public_key" > .ssh/authorized_keys
+test -d .ezsh || git clone https://github.com/kalken/ezsh .ezsh
+test -f .zshrc || ln -s .ezsh/zshrc .zshrc
+EOF
+echo "configured /home/$_user"
 }
 
 #work flow

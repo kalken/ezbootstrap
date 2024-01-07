@@ -289,7 +289,7 @@ echo "Disabled password logins in $FUNCNAME"
 
 /home () {
 # add user
-id $_user || useradd $_user -m -s /usr/bin/zsh
+id $_user > /dev/null 2>&1 || useradd $_user -m -s /usr/bin/zsh
 # login and config user
 su - $_user -s /bin/bash << EOF
 test -d .ssh || mkdir -m 700 .ssh

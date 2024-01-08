@@ -32,7 +32,7 @@ A specific manual can be created based on a config file
 
 * Everything should be written i functions (e.g if you run the script without calling a function nothing should happen)
 * Separate workflow functions that define exactly what to do in what stage
-* Keep the installation of packages in the main function, and use the functions to configure services, or making files
+* Keep the installation of packages in the workflow functions, and use the functions to configure services, or making files
 * For customizing a file, use the filename path as the name for the function. Doing this then calling $FUNCNAME inside the function will generate a string to the file, which can be used when working with the file 
 * Write chroot.sh so it can be run multiple times. Using restore function (to always keep the original file) should make this relativly easy
 

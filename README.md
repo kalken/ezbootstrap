@@ -1,6 +1,6 @@
 # Why make this?
 
-There are many distributions, managing systems and platforms out there. Most of them are just fancy frameworks, that behind the scenes do their thing using terminal commands. I wanted to find a method of boostraping machines without the need for third party tools. It should be reliable, easy to use, and easy to extend to whatever the future requires.
+There are many distributions, managing systems and platforms out there. Most of them are just high level frameworks, that behind the scenes do their thing using common terminal commands. I wanted to find a method of boostraping machines without the need for third party tools. It should be reliable, easy to use, and easy to extend to whatever the future requires.
 
 # Advantages
 

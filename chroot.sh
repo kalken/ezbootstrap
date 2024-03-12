@@ -331,6 +331,10 @@ function stage_0 {
     /etc/systemd/network/wan.network
     /etc/nftables.conf
     systemctl enable nftables
+    
+    /etc/systemd/networkd.conf
+    /etc/iproute2/rt_tables.d/tables.conf
+
     systemctl enable systemd-networkd
     systemctl disable networking
     
